@@ -46,18 +46,34 @@ Partial Class frmDemoCollections
         Me.lblNameSortedListKey = New System.Windows.Forms.Label()
         Me.txtNameSortedListKey = New System.Windows.Forms.TextBox()
         Me.btnAddSortedListKey = New System.Windows.Forms.Button()
-        Me.gtpSortedList = New System.Windows.Forms.GroupBox()
-        Me.btnSelectSortedList = New System.Windows.Forms.Button()
-        Me.lblSortedListIdentificationNumber = New System.Windows.Forms.Label()
-        Me.txtSortedListIdentificationNumber = New System.Windows.Forms.TextBox()
-        Me.txtOutputSortedList = New System.Windows.Forms.TextBox()
-        Me.lblNameSortedList = New System.Windows.Forms.Label()
-        Me.txtNameSortedList = New System.Windows.Forms.TextBox()
-        Me.btnAddSortedList = New System.Windows.Forms.Button()
+        Me.grpCollection = New System.Windows.Forms.GroupBox()
+        Me.btnSelectCollection = New System.Windows.Forms.Button()
+        Me.lblCollectionIdentificationNumber = New System.Windows.Forms.Label()
+        Me.txtCollectionIdentificationNumber = New System.Windows.Forms.TextBox()
+        Me.txtOutputCollection = New System.Windows.Forms.TextBox()
+        Me.lblNameCollection = New System.Windows.Forms.Label()
+        Me.txtNameCollection = New System.Windows.Forms.TextBox()
+        Me.btnAddCollection = New System.Windows.Forms.Button()
+        Me.grpQueue = New System.Windows.Forms.GroupBox()
+        Me.btnQueuePeek = New System.Windows.Forms.Button()
+        Me.btnDequeue = New System.Windows.Forms.Button()
+        Me.txtOutputQueue = New System.Windows.Forms.TextBox()
+        Me.lblNameQueue = New System.Windows.Forms.Label()
+        Me.txtNameQueue = New System.Windows.Forms.TextBox()
+        Me.btnAddQueue = New System.Windows.Forms.Button()
+        Me.grpStack = New System.Windows.Forms.GroupBox()
+        Me.btnStackPeek = New System.Windows.Forms.Button()
+        Me.btnPop = New System.Windows.Forms.Button()
+        Me.txtOutputStack = New System.Windows.Forms.TextBox()
+        Me.lblNameStack = New System.Windows.Forms.Label()
+        Me.txtNameStack = New System.Windows.Forms.TextBox()
+        Me.btnAddStack = New System.Windows.Forms.Button()
         Me.grpList.SuspendLayout()
         Me.grpArrayList.SuspendLayout()
         Me.grpSortedListKey.SuspendLayout()
-        Me.gtpSortedList.SuspendLayout()
+        Me.grpCollection.SuspendLayout()
+        Me.grpQueue.SuspendLayout()
+        Me.grpStack.SuspendLayout()
         Me.SuspendLayout()
         '
         'grpList
@@ -81,7 +97,7 @@ Partial Class frmDemoCollections
         Me.btnSelectList.Location = New System.Drawing.Point(167, 140)
         Me.btnSelectList.Name = "btnSelectList"
         Me.btnSelectList.Size = New System.Drawing.Size(75, 23)
-        Me.btnSelectList.TabIndex = 9
+        Me.btnSelectList.TabIndex = 6
         Me.btnSelectList.Text = "&Select"
         Me.btnSelectList.UseVisualStyleBackColor = True
         '
@@ -90,7 +106,7 @@ Partial Class frmDemoCollections
         Me.lblListIdentificationNumber.Location = New System.Drawing.Point(6, 140)
         Me.lblListIdentificationNumber.Name = "lblListIdentificationNumber"
         Me.lblListIdentificationNumber.Size = New System.Drawing.Size(50, 19)
-        Me.lblListIdentificationNumber.TabIndex = 8
+        Me.lblListIdentificationNumber.TabIndex = 4
         Me.lblListIdentificationNumber.Text = "ID:"
         '
         'txtListIdentificationNumber
@@ -98,7 +114,7 @@ Partial Class frmDemoCollections
         Me.txtListIdentificationNumber.Location = New System.Drawing.Point(62, 139)
         Me.txtListIdentificationNumber.Name = "txtListIdentificationNumber"
         Me.txtListIdentificationNumber.Size = New System.Drawing.Size(88, 20)
-        Me.txtListIdentificationNumber.TabIndex = 7
+        Me.txtListIdentificationNumber.TabIndex = 5
         '
         'txtOutputList
         '
@@ -114,7 +130,7 @@ Partial Class frmDemoCollections
         Me.lblNameList.Location = New System.Drawing.Point(15, 20)
         Me.lblNameList.Name = "lblNameList"
         Me.lblNameList.Size = New System.Drawing.Size(50, 19)
-        Me.lblNameList.TabIndex = 2
+        Me.lblNameList.TabIndex = 0
         Me.lblNameList.Text = "Name:"
         '
         'txtNameList
@@ -129,7 +145,7 @@ Partial Class frmDemoCollections
         Me.btnAddList.Location = New System.Drawing.Point(167, 44)
         Me.btnAddList.Name = "btnAddList"
         Me.btnAddList.Size = New System.Drawing.Size(75, 23)
-        Me.btnAddList.TabIndex = 0
+        Me.btnAddList.TabIndex = 2
         Me.btnAddList.Text = "&Add"
         Me.btnAddList.UseVisualStyleBackColor = True
         '
@@ -154,7 +170,7 @@ Partial Class frmDemoCollections
         Me.btnSelectArrayList.Location = New System.Drawing.Point(167, 142)
         Me.btnSelectArrayList.Name = "btnSelectArrayList"
         Me.btnSelectArrayList.Size = New System.Drawing.Size(75, 23)
-        Me.btnSelectArrayList.TabIndex = 12
+        Me.btnSelectArrayList.TabIndex = 6
         Me.btnSelectArrayList.Text = "&Select"
         Me.btnSelectArrayList.UseVisualStyleBackColor = True
         '
@@ -163,7 +179,7 @@ Partial Class frmDemoCollections
         Me.Label1.Location = New System.Drawing.Point(6, 142)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(50, 19)
-        Me.Label1.TabIndex = 11
+        Me.Label1.TabIndex = 4
         Me.Label1.Text = "ID:"
         '
         'txtArrayListIdentificationNumber
@@ -171,7 +187,7 @@ Partial Class frmDemoCollections
         Me.txtArrayListIdentificationNumber.Location = New System.Drawing.Point(62, 141)
         Me.txtArrayListIdentificationNumber.Name = "txtArrayListIdentificationNumber"
         Me.txtArrayListIdentificationNumber.Size = New System.Drawing.Size(88, 20)
-        Me.txtArrayListIdentificationNumber.TabIndex = 10
+        Me.txtArrayListIdentificationNumber.TabIndex = 5
         '
         'txtOutputArrayList
         '
@@ -187,7 +203,7 @@ Partial Class frmDemoCollections
         Me.lblNameArrayList.Location = New System.Drawing.Point(15, 20)
         Me.lblNameArrayList.Name = "lblNameArrayList"
         Me.lblNameArrayList.Size = New System.Drawing.Size(50, 19)
-        Me.lblNameArrayList.TabIndex = 2
+        Me.lblNameArrayList.TabIndex = 0
         Me.lblNameArrayList.Text = "Name:"
         '
         'txtNameArrayList
@@ -202,7 +218,7 @@ Partial Class frmDemoCollections
         Me.btnAddArrayList.Location = New System.Drawing.Point(167, 44)
         Me.btnAddArrayList.Name = "btnAddArrayList"
         Me.btnAddArrayList.Size = New System.Drawing.Size(75, 23)
-        Me.btnAddArrayList.TabIndex = 0
+        Me.btnAddArrayList.TabIndex = 2
         Me.btnAddArrayList.Text = "&Add"
         Me.btnAddArrayList.UseVisualStyleBackColor = True
         '
@@ -236,7 +252,7 @@ Partial Class frmDemoCollections
         Me.lblSortedListKeyIdentificationNumber.Location = New System.Drawing.Point(6, 143)
         Me.lblSortedListKeyIdentificationNumber.Name = "lblSortedListKeyIdentificationNumber"
         Me.lblSortedListKeyIdentificationNumber.Size = New System.Drawing.Size(50, 19)
-        Me.lblSortedListKeyIdentificationNumber.TabIndex = 5
+        Me.lblSortedListKeyIdentificationNumber.TabIndex = 4
         Me.lblSortedListKeyIdentificationNumber.Text = "ID:"
         '
         'txtSortedListKeyIdentificationNumber
@@ -244,7 +260,7 @@ Partial Class frmDemoCollections
         Me.txtSortedListKeyIdentificationNumber.Location = New System.Drawing.Point(62, 142)
         Me.txtSortedListKeyIdentificationNumber.Name = "txtSortedListKeyIdentificationNumber"
         Me.txtSortedListKeyIdentificationNumber.Size = New System.Drawing.Size(88, 20)
-        Me.txtSortedListKeyIdentificationNumber.TabIndex = 4
+        Me.txtSortedListKeyIdentificationNumber.TabIndex = 5
         '
         'txtOutputSortedListKey
         '
@@ -260,7 +276,7 @@ Partial Class frmDemoCollections
         Me.lblNameSortedListKey.Location = New System.Drawing.Point(15, 20)
         Me.lblNameSortedListKey.Name = "lblNameSortedListKey"
         Me.lblNameSortedListKey.Size = New System.Drawing.Size(50, 19)
-        Me.lblNameSortedListKey.TabIndex = 2
+        Me.lblNameSortedListKey.TabIndex = 0
         Me.lblNameSortedListKey.Text = "Name:"
         '
         'txtNameSortedListKey
@@ -275,89 +291,223 @@ Partial Class frmDemoCollections
         Me.btnAddSortedListKey.Location = New System.Drawing.Point(167, 45)
         Me.btnAddSortedListKey.Name = "btnAddSortedListKey"
         Me.btnAddSortedListKey.Size = New System.Drawing.Size(75, 23)
-        Me.btnAddSortedListKey.TabIndex = 0
+        Me.btnAddSortedListKey.TabIndex = 2
         Me.btnAddSortedListKey.Text = "&Add"
         Me.btnAddSortedListKey.UseVisualStyleBackColor = True
         '
-        'gtpSortedList
+        'grpCollection
         '
-        Me.gtpSortedList.Controls.Add(Me.btnSelectSortedList)
-        Me.gtpSortedList.Controls.Add(Me.lblSortedListIdentificationNumber)
-        Me.gtpSortedList.Controls.Add(Me.txtSortedListIdentificationNumber)
-        Me.gtpSortedList.Controls.Add(Me.txtOutputSortedList)
-        Me.gtpSortedList.Controls.Add(Me.lblNameSortedList)
-        Me.gtpSortedList.Controls.Add(Me.txtNameSortedList)
-        Me.gtpSortedList.Controls.Add(Me.btnAddSortedList)
-        Me.gtpSortedList.Location = New System.Drawing.Point(261, 170)
-        Me.gtpSortedList.Name = "gtpSortedList"
-        Me.gtpSortedList.Size = New System.Drawing.Size(248, 168)
-        Me.gtpSortedList.TabIndex = 3
-        Me.gtpSortedList.TabStop = False
-        Me.gtpSortedList.Text = "&SortedList"
+        Me.grpCollection.Controls.Add(Me.btnSelectCollection)
+        Me.grpCollection.Controls.Add(Me.lblCollectionIdentificationNumber)
+        Me.grpCollection.Controls.Add(Me.txtCollectionIdentificationNumber)
+        Me.grpCollection.Controls.Add(Me.txtOutputCollection)
+        Me.grpCollection.Controls.Add(Me.lblNameCollection)
+        Me.grpCollection.Controls.Add(Me.txtNameCollection)
+        Me.grpCollection.Controls.Add(Me.btnAddCollection)
+        Me.grpCollection.Location = New System.Drawing.Point(261, 170)
+        Me.grpCollection.Name = "grpCollection"
+        Me.grpCollection.Size = New System.Drawing.Size(248, 168)
+        Me.grpCollection.TabIndex = 3
+        Me.grpCollection.TabStop = False
+        Me.grpCollection.Text = "&Collection"
         '
-        'btnSelectSortedList
+        'btnSelectCollection
         '
-        Me.btnSelectSortedList.Location = New System.Drawing.Point(167, 142)
-        Me.btnSelectSortedList.Name = "btnSelectSortedList"
-        Me.btnSelectSortedList.Size = New System.Drawing.Size(75, 23)
-        Me.btnSelectSortedList.TabIndex = 6
-        Me.btnSelectSortedList.Text = "&Select"
-        Me.btnSelectSortedList.UseVisualStyleBackColor = True
+        Me.btnSelectCollection.Location = New System.Drawing.Point(167, 142)
+        Me.btnSelectCollection.Name = "btnSelectCollection"
+        Me.btnSelectCollection.Size = New System.Drawing.Size(75, 23)
+        Me.btnSelectCollection.TabIndex = 6
+        Me.btnSelectCollection.Text = "&Select"
+        Me.btnSelectCollection.UseVisualStyleBackColor = True
         '
-        'lblSortedListIdentificationNumber
+        'lblCollectionIdentificationNumber
         '
-        Me.lblSortedListIdentificationNumber.Location = New System.Drawing.Point(6, 143)
-        Me.lblSortedListIdentificationNumber.Name = "lblSortedListIdentificationNumber"
-        Me.lblSortedListIdentificationNumber.Size = New System.Drawing.Size(50, 19)
-        Me.lblSortedListIdentificationNumber.TabIndex = 5
-        Me.lblSortedListIdentificationNumber.Text = "ID:"
+        Me.lblCollectionIdentificationNumber.Location = New System.Drawing.Point(6, 143)
+        Me.lblCollectionIdentificationNumber.Name = "lblCollectionIdentificationNumber"
+        Me.lblCollectionIdentificationNumber.Size = New System.Drawing.Size(50, 19)
+        Me.lblCollectionIdentificationNumber.TabIndex = 4
+        Me.lblCollectionIdentificationNumber.Text = "ID:"
         '
-        'txtSortedListIdentificationNumber
+        'txtCollectionIdentificationNumber
         '
-        Me.txtSortedListIdentificationNumber.Location = New System.Drawing.Point(62, 142)
-        Me.txtSortedListIdentificationNumber.Name = "txtSortedListIdentificationNumber"
-        Me.txtSortedListIdentificationNumber.Size = New System.Drawing.Size(88, 20)
-        Me.txtSortedListIdentificationNumber.TabIndex = 4
+        Me.txtCollectionIdentificationNumber.Location = New System.Drawing.Point(62, 142)
+        Me.txtCollectionIdentificationNumber.Name = "txtCollectionIdentificationNumber"
+        Me.txtCollectionIdentificationNumber.Size = New System.Drawing.Size(88, 20)
+        Me.txtCollectionIdentificationNumber.TabIndex = 5
         '
-        'txtOutputSortedList
+        'txtOutputCollection
         '
-        Me.txtOutputSortedList.Location = New System.Drawing.Point(6, 72)
-        Me.txtOutputSortedList.Multiline = True
-        Me.txtOutputSortedList.Name = "txtOutputSortedList"
-        Me.txtOutputSortedList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtOutputSortedList.Size = New System.Drawing.Size(236, 65)
-        Me.txtOutputSortedList.TabIndex = 3
+        Me.txtOutputCollection.Location = New System.Drawing.Point(6, 72)
+        Me.txtOutputCollection.Multiline = True
+        Me.txtOutputCollection.Name = "txtOutputCollection"
+        Me.txtOutputCollection.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtOutputCollection.Size = New System.Drawing.Size(236, 65)
+        Me.txtOutputCollection.TabIndex = 3
         '
-        'lblNameSortedList
+        'lblNameCollection
         '
-        Me.lblNameSortedList.Location = New System.Drawing.Point(15, 20)
-        Me.lblNameSortedList.Name = "lblNameSortedList"
-        Me.lblNameSortedList.Size = New System.Drawing.Size(50, 19)
-        Me.lblNameSortedList.TabIndex = 2
-        Me.lblNameSortedList.Text = "Name:"
+        Me.lblNameCollection.Location = New System.Drawing.Point(15, 20)
+        Me.lblNameCollection.Name = "lblNameCollection"
+        Me.lblNameCollection.Size = New System.Drawing.Size(50, 19)
+        Me.lblNameCollection.TabIndex = 0
+        Me.lblNameCollection.Text = "Name:"
         '
-        'txtNameSortedList
+        'txtNameCollection
         '
-        Me.txtNameSortedList.Location = New System.Drawing.Point(71, 19)
-        Me.txtNameSortedList.Name = "txtNameSortedList"
-        Me.txtNameSortedList.Size = New System.Drawing.Size(171, 20)
-        Me.txtNameSortedList.TabIndex = 1
+        Me.txtNameCollection.Location = New System.Drawing.Point(71, 19)
+        Me.txtNameCollection.Name = "txtNameCollection"
+        Me.txtNameCollection.Size = New System.Drawing.Size(171, 20)
+        Me.txtNameCollection.TabIndex = 1
         '
-        'btnAddSortedList
+        'btnAddCollection
         '
-        Me.btnAddSortedList.Location = New System.Drawing.Point(167, 45)
-        Me.btnAddSortedList.Name = "btnAddSortedList"
-        Me.btnAddSortedList.Size = New System.Drawing.Size(75, 23)
-        Me.btnAddSortedList.TabIndex = 0
-        Me.btnAddSortedList.Text = "&Add"
-        Me.btnAddSortedList.UseVisualStyleBackColor = True
+        Me.btnAddCollection.Location = New System.Drawing.Point(167, 45)
+        Me.btnAddCollection.Name = "btnAddCollection"
+        Me.btnAddCollection.Size = New System.Drawing.Size(75, 23)
+        Me.btnAddCollection.TabIndex = 2
+        Me.btnAddCollection.Text = "&Add"
+        Me.btnAddCollection.UseVisualStyleBackColor = True
+        '
+        'grpQueue
+        '
+        Me.grpQueue.Controls.Add(Me.btnQueuePeek)
+        Me.grpQueue.Controls.Add(Me.btnDequeue)
+        Me.grpQueue.Controls.Add(Me.txtOutputQueue)
+        Me.grpQueue.Controls.Add(Me.lblNameQueue)
+        Me.grpQueue.Controls.Add(Me.txtNameQueue)
+        Me.grpQueue.Controls.Add(Me.btnAddQueue)
+        Me.grpQueue.Location = New System.Drawing.Point(7, 337)
+        Me.grpQueue.Name = "grpQueue"
+        Me.grpQueue.Size = New System.Drawing.Size(248, 168)
+        Me.grpQueue.TabIndex = 4
+        Me.grpQueue.TabStop = False
+        Me.grpQueue.Text = "&Queue"
+        '
+        'btnQueuePeek
+        '
+        Me.btnQueuePeek.Location = New System.Drawing.Point(9, 139)
+        Me.btnQueuePeek.Name = "btnQueuePeek"
+        Me.btnQueuePeek.Size = New System.Drawing.Size(86, 23)
+        Me.btnQueuePeek.TabIndex = 4
+        Me.btnQueuePeek.Text = "&Peek"
+        Me.btnQueuePeek.UseVisualStyleBackColor = True
+        '
+        'btnDequeue
+        '
+        Me.btnDequeue.Location = New System.Drawing.Point(125, 142)
+        Me.btnDequeue.Name = "btnDequeue"
+        Me.btnDequeue.Size = New System.Drawing.Size(117, 23)
+        Me.btnDequeue.TabIndex = 5
+        Me.btnDequeue.Text = "&Remove (Dequeue )"
+        Me.btnDequeue.UseVisualStyleBackColor = True
+        '
+        'txtOutputQueue
+        '
+        Me.txtOutputQueue.Location = New System.Drawing.Point(6, 72)
+        Me.txtOutputQueue.Multiline = True
+        Me.txtOutputQueue.Name = "txtOutputQueue"
+        Me.txtOutputQueue.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtOutputQueue.Size = New System.Drawing.Size(236, 65)
+        Me.txtOutputQueue.TabIndex = 3
+        '
+        'lblNameQueue
+        '
+        Me.lblNameQueue.Location = New System.Drawing.Point(15, 20)
+        Me.lblNameQueue.Name = "lblNameQueue"
+        Me.lblNameQueue.Size = New System.Drawing.Size(50, 19)
+        Me.lblNameQueue.TabIndex = 0
+        Me.lblNameQueue.Text = "Name:"
+        '
+        'txtNameQueue
+        '
+        Me.txtNameQueue.Location = New System.Drawing.Point(71, 19)
+        Me.txtNameQueue.Name = "txtNameQueue"
+        Me.txtNameQueue.Size = New System.Drawing.Size(171, 20)
+        Me.txtNameQueue.TabIndex = 1
+        '
+        'btnAddQueue
+        '
+        Me.btnAddQueue.Location = New System.Drawing.Point(125, 45)
+        Me.btnAddQueue.Name = "btnAddQueue"
+        Me.btnAddQueue.Size = New System.Drawing.Size(117, 23)
+        Me.btnAddQueue.TabIndex = 2
+        Me.btnAddQueue.Text = "&Add (Enqueue)"
+        Me.btnAddQueue.UseVisualStyleBackColor = True
+        '
+        'grpStack
+        '
+        Me.grpStack.Controls.Add(Me.btnStackPeek)
+        Me.grpStack.Controls.Add(Me.btnPop)
+        Me.grpStack.Controls.Add(Me.txtOutputStack)
+        Me.grpStack.Controls.Add(Me.lblNameStack)
+        Me.grpStack.Controls.Add(Me.txtNameStack)
+        Me.grpStack.Controls.Add(Me.btnAddStack)
+        Me.grpStack.Location = New System.Drawing.Point(261, 337)
+        Me.grpStack.Name = "grpStack"
+        Me.grpStack.Size = New System.Drawing.Size(248, 168)
+        Me.grpStack.TabIndex = 5
+        Me.grpStack.TabStop = False
+        Me.grpStack.Text = "&Stack"
+        '
+        'btnStackPeek
+        '
+        Me.btnStackPeek.Location = New System.Drawing.Point(9, 139)
+        Me.btnStackPeek.Name = "btnStackPeek"
+        Me.btnStackPeek.Size = New System.Drawing.Size(86, 23)
+        Me.btnStackPeek.TabIndex = 4
+        Me.btnStackPeek.Text = "&Peek"
+        Me.btnStackPeek.UseVisualStyleBackColor = True
+        '
+        'btnPop
+        '
+        Me.btnPop.Location = New System.Drawing.Point(125, 142)
+        Me.btnPop.Name = "btnPop"
+        Me.btnPop.Size = New System.Drawing.Size(117, 23)
+        Me.btnPop.TabIndex = 5
+        Me.btnPop.Text = "&Remove (Pop) "
+        Me.btnPop.UseVisualStyleBackColor = True
+        '
+        'txtOutputStack
+        '
+        Me.txtOutputStack.Location = New System.Drawing.Point(6, 72)
+        Me.txtOutputStack.Multiline = True
+        Me.txtOutputStack.Name = "txtOutputStack"
+        Me.txtOutputStack.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtOutputStack.Size = New System.Drawing.Size(236, 65)
+        Me.txtOutputStack.TabIndex = 3
+        '
+        'lblNameStack
+        '
+        Me.lblNameStack.Location = New System.Drawing.Point(15, 20)
+        Me.lblNameStack.Name = "lblNameStack"
+        Me.lblNameStack.Size = New System.Drawing.Size(50, 19)
+        Me.lblNameStack.TabIndex = 0
+        Me.lblNameStack.Text = "Name:"
+        '
+        'txtNameStack
+        '
+        Me.txtNameStack.Location = New System.Drawing.Point(71, 19)
+        Me.txtNameStack.Name = "txtNameStack"
+        Me.txtNameStack.Size = New System.Drawing.Size(171, 20)
+        Me.txtNameStack.TabIndex = 1
+        '
+        'btnAddStack
+        '
+        Me.btnAddStack.Location = New System.Drawing.Point(125, 45)
+        Me.btnAddStack.Name = "btnAddStack"
+        Me.btnAddStack.Size = New System.Drawing.Size(117, 23)
+        Me.btnAddStack.TabIndex = 2
+        Me.btnAddStack.Text = "&Add (Push)"
+        Me.btnAddStack.UseVisualStyleBackColor = True
         '
         'frmDemoCollections
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(513, 498)
-        Me.Controls.Add(Me.gtpSortedList)
+        Me.ClientSize = New System.Drawing.Size(513, 510)
+        Me.Controls.Add(Me.grpStack)
+        Me.Controls.Add(Me.grpQueue)
+        Me.Controls.Add(Me.grpCollection)
         Me.Controls.Add(Me.grpSortedListKey)
         Me.Controls.Add(Me.grpArrayList)
         Me.Controls.Add(Me.grpList)
@@ -372,8 +522,12 @@ Partial Class frmDemoCollections
         Me.grpArrayList.PerformLayout()
         Me.grpSortedListKey.ResumeLayout(False)
         Me.grpSortedListKey.PerformLayout()
-        Me.gtpSortedList.ResumeLayout(False)
-        Me.gtpSortedList.PerformLayout()
+        Me.grpCollection.ResumeLayout(False)
+        Me.grpCollection.PerformLayout()
+        Me.grpQueue.ResumeLayout(False)
+        Me.grpQueue.PerformLayout()
+        Me.grpStack.ResumeLayout(False)
+        Me.grpStack.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -402,12 +556,26 @@ Partial Class frmDemoCollections
     Friend WithEvents btnSelectArrayList As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents txtArrayListIdentificationNumber As TextBox
-    Friend WithEvents gtpSortedList As GroupBox
-    Friend WithEvents btnSelectSortedList As Button
-    Friend WithEvents lblSortedListIdentificationNumber As Label
-    Friend WithEvents txtSortedListIdentificationNumber As TextBox
-    Friend WithEvents txtOutputSortedList As TextBox
-    Friend WithEvents lblNameSortedList As Label
-    Friend WithEvents txtNameSortedList As TextBox
-    Friend WithEvents btnAddSortedList As Button
+    Friend WithEvents grpCollection As GroupBox
+    Friend WithEvents btnSelectCollection As Button
+    Friend WithEvents lblCollectionIdentificationNumber As Label
+    Friend WithEvents txtCollectionIdentificationNumber As TextBox
+    Friend WithEvents txtOutputCollection As TextBox
+    Friend WithEvents lblNameCollection As Label
+    Friend WithEvents txtNameCollection As TextBox
+    Friend WithEvents btnAddCollection As Button
+    Friend WithEvents grpQueue As GroupBox
+    Friend WithEvents btnDequeue As Button
+    Friend WithEvents txtOutputQueue As TextBox
+    Friend WithEvents lblNameQueue As Label
+    Friend WithEvents txtNameQueue As TextBox
+    Friend WithEvents btnAddQueue As Button
+    Friend WithEvents btnQueuePeek As Button
+    Friend WithEvents grpStack As GroupBox
+    Friend WithEvents btnStackPeek As Button
+    Friend WithEvents btnPop As Button
+    Friend WithEvents txtOutputStack As TextBox
+    Friend WithEvents lblNameStack As Label
+    Friend WithEvents txtNameStack As TextBox
+    Friend WithEvents btnAddStack As Button
 End Class
