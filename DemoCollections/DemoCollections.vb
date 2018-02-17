@@ -1,57 +1,74 @@
-﻿Public Class frmDemoCollections
+﻿''' <summary>
+''' Author:         A.P. Massardo
+''' Project:        DemoCollections
+''' Date:           15-Feb-2018
+''' Description:    Application to demonstrate the basec use of some Visual Basic collections.
+''' </summary>
+
+Public Class frmDemoCollections
 
 #Region "List"
 
+    ''' <summary>
+    ''' Form/Class level List Object
+    ''' </summary>
     Private studentList As New List(Of Student)
 
+    ''' <summary>
+    ''' btnAdd_Click - demonstrates adding student objects to a list
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAddList.Click
 
+        Dim student As New Student()        ' create a new student object
 
-        Dim student As New Student()
+        student.Name = txtNameList.Text     ' assign the name in the text box to the name property
 
-        student.Name = txtNameList.Text
+        studentList.Add(student)            ' add a student to the List object
 
-        studentList.Add(student)
+        txtOutputList.Clear()               ' clear the output text box
 
-        txtOutputList.Clear()
+        For Each student In studentList     ' loop the studentlist
 
-        For Each student In studentList
-
-            txtOutputList.Text += student.GetStudentData() & vbCrLf
+            txtOutputList.Text += student.GetStudentData() & vbCrLf ' append the GetStudentData function data to the output text box
 
         Next student
 
-        txtNameList.Clear()
-        txtNameList.Focus()
+        txtNameList.Clear()                 ' clear the input text box
+        txtNameList.Focus()                 ' set focus to the input text box
 
     End Sub
 
+    ''' <summary>
+    ''' btnSelect_Click - demonstrates selecting a an object from the list
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnSelectList_Click(sender As Object, e As EventArgs) Handles btnSelectList.Click
 
-        Dim identificationNumber As String = txtListIdentificationNumber.Text.Trim()
-        Dim found As Boolean = False
+        Dim identificationNumber As String = txtListIdentificationNumber.Text.Trim()    ' get the input from the text box
+        Dim found As Boolean = False    ' declare a boolean to determine if the data input was found in the list
 
-        txtOutputList.Clear()
+        txtOutputList.Clear()           ' clear the output text box
 
-        For index As Integer = 0 To studentList.Count - 1
+        For index As Integer = 0 To studentList.Count - 1   ' loop the studentList
 
-            If studentList(index).IdentificationNumber.ToString() = identificationNumber Then
+            If studentList(index).IdentificationNumber.ToString() = identificationNumber Then   ' check if the current object id is the same is the input
 
-                txtOutputList.Text = studentList(index).GetStudentData
+                txtOutputList.Text = studentList(index).GetStudentData  ' display the data from the GetStudentData function
 
-                found = True
+                found = True    ' set the found boolean to true
 
-                index = studentList.Count
+                index = studentList.Count   ' set the loop index to the studentList.Count to exit the loop early
 
             End If
 
-
         Next index
 
+        If found = False Then ' if the object was not found in the list
 
-        If found = False Then
-
-            txtOutputList.Text = "This identification number does not exist.!"
+            txtOutputList.Text = "This identification number does not exist.!"  ' tell the user
 
         End If
 
@@ -60,53 +77,67 @@
 #End Region
 
 #Region "ArrayList"
+
+    ''' <summary>
+    ''' Form/Class level ArrayList Object
+    ''' </summary>
     Private studentArrayList As New ArrayList
 
+    ''' <summary>
+    ''' btnAdd_Click - demonstrates adding student objects to an ArrayList
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnAddArrayList_Click(sender As Object, e As EventArgs) Handles btnAddArrayList.Click
 
-        Dim student As New Student()
+        Dim student As New Student()            ' create a new student object
 
-        student.Name = txtNameArrayList.Text
+        student.Name = txtNameArrayList.Text    ' assign the name in the text box to the name property
 
-        studentArrayList.Add(student)
+        studentArrayList.Add(student)           ' add a student to the ArrayList object
 
-        txtOutputArrayList.Clear()
+        txtOutputArrayList.Clear()              ' clear the output text box
 
-        For Each student In studentArrayList
+        For Each student In studentArrayList    ' loop the studentArrayList
 
-            txtOutputArrayList.Text += student.GetStudentData() & vbCrLf
+            txtOutputArrayList.Text += student.GetStudentData() & vbCrLf    ' append the GetStudentData function data to the output text box
 
         Next student
 
-        txtNameArrayList.Clear()
-        txtNameArrayList.Focus()
+        txtNameArrayList.Clear()    ' clear the input text box
+        txtNameArrayList.Focus()    ' set focus to the input text box
 
     End Sub
 
+    ''' <summary>
+    ''' btnSelect_Click - demonstrates selecting a an object from the ArrayList
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnSelectArrayList_Click(sender As Object, e As EventArgs) Handles btnSelectArrayList.Click
 
-        Dim identificationNumber As String = txtArrayListIdentificationNumber.Text.Trim()
-        Dim found As Boolean = False
+        Dim identificationNumber As String = txtArrayListIdentificationNumber.Text.Trim() ' get the input from the text box
+        Dim found As Boolean = False ' declare a boolean to determine if the data input was found in the ArrayList
 
-        txtOutputArrayList.Clear()
+        txtOutputArrayList.Clear()  ' clear the output text box
 
-        For index As Integer = 0 To studentArrayList.Count - 1
+        For index As Integer = 0 To studentArrayList.Count - 1 ' loop the studentArrayList
 
-            If studentArrayList(index).IdentificationNumber.ToString() = identificationNumber Then
+            If studentArrayList(index).IdentificationNumber.ToString() = identificationNumber Then  ' check if the current object id is the same is the input
 
-                txtOutputArrayList.Text = studentArrayList(index).GetStudentData
+                txtOutputArrayList.Text = studentArrayList(index).GetStudentData()  ' display the data from the GetStudentData function
 
-                found = True
+                found = True        ' set the found boolean to true
 
-                index = studentArrayList.Count
+                index = studentArrayList.Count  ' set the loop index to the studentArrayList.Count to exit the loop early
 
             End If
 
         Next index
 
-        If found = False Then
+        If found = False Then   ' if the object was not found in the studentArrayList
 
-            txtOutputArrayList.Text = "This identification number does not exist.!"
+            txtOutputArrayList.Text = "This identification number does not exist.!" ' tell the user
 
         End If
 
@@ -116,42 +147,55 @@
 
 #Region "SortedList"
 
+    ''' <summary>
+    ''' Form/Class level SortedList Object
+    ''' </summary>
     Private studentSortedListKey As New SortedList()
 
+    ''' <summary>
+    ''' btnAdd_Click - demonstrates adding student objects to a SortedList
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnAddSortedListKey_Click(sender As Object, e As EventArgs) Handles btnAddSortedListKey.Click
 
-        Dim student As New Student()
+        Dim student As New Student()                ' create a new student object
 
-        student.Name = txtNameSortedListKey.Text
+        student.Name = txtNameSortedListKey.Text    ' assign the name in the text box to the name property
 
-        studentSortedListKey.Add(student.IdentificationNumber.ToString(), student)
+        studentSortedListKey.Add(student.IdentificationNumber.ToString(), student) ' add a student to the SortedList object with a Key of the student identification number converted to string
 
-        txtOutputSortedListKey.Clear()
+        txtOutputSortedListKey.Clear()              ' clear the output text box
 
-        For Each studentEntry As DictionaryEntry In studentSortedListKey
+        For Each studentEntry As DictionaryEntry In studentSortedListKey    ' loop the studentSortedListKey
 
-            txtOutputSortedListKey.Text += CType(studentEntry.Value, Student).GetStudentData() & vbCrLf
+            txtOutputSortedListKey.Text += CType(studentEntry.Value, Student).GetStudentData() & vbCrLf ' append the GetStudentData function data to the output text box
 
         Next studentEntry
 
-        txtNameSortedListKey.Clear()
-        txtNameSortedListKey.Focus()
+        txtNameSortedListKey.Clear()    ' clear the input text box
+        txtNameSortedListKey.Focus()    ' set focus to the input text box
 
     End Sub
 
+    ''' <summary>
+    ''' btnSelect_Click - demonstrates selecting a an object from the SortedList
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnSelectSortedListKey_Click(sender As Object, e As EventArgs) Handles btnSelectSortedListKey.Click
 
-        Dim identificationNumber As String = txtSortedListKeyIdentificationNumber.Text
+        Dim identificationNumber As String = txtSortedListKeyIdentificationNumber.Text  ' get the input from the text box
 
-        txtOutputSortedListKey.Clear()
+        txtOutputSortedListKey.Clear()  ' clear the output text box
 
-        If studentSortedListKey.ContainsKey(identificationNumber) Then
+        If studentSortedListKey.ContainsKey(identificationNumber) Then  ' check if the SortedList has the key matching the input
 
-            txtOutputSortedListKey.Text = CType(studentSortedListKey(identificationNumber), Student).GetStudentData()
+            txtOutputSortedListKey.Text = CType(studentSortedListKey(identificationNumber), Student).GetStudentData()   ' display the data from the GetStudentData function
 
-        Else
+        Else    ' if the object was not found in the SortedList
 
-            txtOutputSortedListKey.Text = "This identification number does not exist.!"
+            txtOutputSortedListKey.Text = "This identification number does not exist.!" ' tell the user
 
         End If
 
@@ -161,43 +205,55 @@
 
 #Region "Collection"
 
+    ''' <summary>
+    ''' Form/Class level Collection Object
+    ''' </summary>
     Private studentCollection As New Collection
 
+    ''' <summary>
+    ''' btnAdd_Click - demonstrates adding student objects to a Collection
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnAddCollection_Click(sender As Object, e As EventArgs) Handles btnAddCollection.Click
 
+        Dim student As New Student()            ' create a new student object
 
-        Dim student As New Student()
+        student.Name = txtNameCollection.Text   ' assign the name in the text box to the name property
 
-        student.Name = txtNameCollection.Text
+        studentCollection.Add(student, student.IdentificationNumber.ToString()) ' add a student to the Colection object with a Key of the student 
 
-        studentCollection.Add(student, student.IdentificationNumber.ToString())
+        txtOutputCollection.Clear()             ' clear the output text box
 
-        txtOutputCollection.Clear()
+        For Each studentLoop As Student In studentCollection ' loop the studentCollection
 
-        For Each studentLoop As Student In studentCollection
-
-            txtOutputCollection.Text += studentLoop.GetStudentData() & vbCrLf
+            txtOutputCollection.Text += studentLoop.GetStudentData() & vbCrLf   ' append the GetStudentData function data to the output text box
 
         Next studentLoop
 
-        txtNameCollection.Clear()
-        txtNameCollection.Focus()
+        txtNameCollection.Clear()   ' clear the input text box
+        txtNameCollection.Focus()   ' set focus to the input text box
 
     End Sub
 
+    ''' <summary>
+    ''' btnSelect_Click - demonstrates selecting a an object from the Collection
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnSelectCollection_Click(sender As Object, e As EventArgs) Handles btnSelectCollection.Click
 
-        Dim identificationNumber As String = txtCollectionIdentificationNumber.Text
+        Dim identificationNumber As String = txtCollectionIdentificationNumber.Text     ' get the input from the text box
 
-        txtOutputCollection.Clear()
+        txtOutputCollection.Clear()     ' clear the output text box
 
-        If studentCollection.Contains(identificationNumber) Then
+        If studentCollection.Contains(identificationNumber) Then    ' check if the Collection has the key matching the input
 
-            txtOutputCollection.Text = CType(studentCollection(identificationNumber), Student).GetStudentData()
+            txtOutputCollection.Text = CType(studentCollection(identificationNumber), Student).GetStudentData()     ' display the data from the GetStudentData function
 
-        Else
+        Else    ' if the object was not found in the Collection
 
-            txtOutputCollection.Text = "This identification number does not exist.!"
+            txtOutputCollection.Text = "This identification number does not exist.!"    ' tell the user
 
         End If
 
@@ -216,58 +272,71 @@
 
     Private studentQueue As New Queue(Of Student)
 
+    ''' <summary>
+    ''' btnAdd_Click - demonstrates adding student objects to a Queue
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnAddQueue_Click(sender As Object, e As EventArgs) Handles btnAddQueue.Click
 
-        Dim student As New Student()
+        Dim student As New Student()        ' create a new student object
 
-        student.Name = txtNameQueue.Text
+        student.Name = txtNameQueue.Text    ' assign the name in the text box to the name property
 
-        studentQueue.Enqueue(student)
+        studentQueue.Enqueue(student)       ' add/enqueue a student to the List object
 
-        txtOutputQueue.Clear()
+        txtOutputQueue.Clear()              ' clear the output text box
 
-        For Each studentLoop As Student In studentQueue
+        For Each studentLoop As Student In studentQueue     ' loop the studentQueue
 
-            txtOutputQueue.Text += studentLoop.GetStudentData() & vbCrLf
+            txtOutputQueue.Text += studentLoop.GetStudentData() & vbCrLf    ' append the GetStudentData function data to the output text box
 
         Next studentLoop
 
-        txtNameQueue.Clear()
-        txtNameQueue.Focus()
+        txtNameQueue.Clear()    ' clear the input text box
+        txtNameQueue.Focus()    ' set focus to the input text box
 
     End Sub
 
+    ''' <summary>
+    ''' btnDequeue_Click - demonstrate the Dequeue of the Queue object
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnDequeue_Click(sender As Object, e As EventArgs) Handles btnDequeue.Click
 
-        Dim student As Student
+        Dim student As Student ' declare a student object
 
-        txtOutputQueue.Clear()
+        txtOutputQueue.Clear()  ' clear the output text box
 
-        If studentQueue.Count > 0 Then
+        If studentQueue.Count > 0 Then  ' check if the Queue has any objects in it
 
-            student = studentQueue.Dequeue()
+            student = studentQueue.Dequeue() ' set the student object and remove it from the queue
 
-            txtOutputQueue.Text = "Dequeue-Look and Remove the next in line." & vbCrLf & student.GetStudentData()
+            txtOutputQueue.Text = "Dequeue-Look and Remove the next in line." & vbCrLf & student.GetStudentData() ' display the message to the user
 
         End If
 
     End Sub
 
+    ''' <summary>
+    ''' btnQueuePeek_Click -  demonstrate the Peek of the Queue object
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnQueuePeek_Click(sender As Object, e As EventArgs) Handles btnQueuePeek.Click
 
-        Dim student As Student
+        Dim student As Student  ' declare a student object
 
-        txtOutputQueue.Clear()
+        txtOutputQueue.Clear()  ' clear the output text box
 
-        If studentQueue.Count > 0 Then
+        If studentQueue.Count > 0 Then   ' check if the Queue has any objects in it
 
-            student = studentQueue.Peek()
+            student = studentQueue.Peek()   ' set the student object
 
-            txtOutputQueue.Text = "Peek-Look and do not Remove the next in line." & vbCrLf & student.GetStudentData()
+            txtOutputQueue.Text = "Peek-Look and do not Remove the next in line." & vbCrLf & student.GetStudentData() ' display the message to the user
 
         End If
-
-
 
     End Sub
 
@@ -277,57 +346,74 @@
 
 #Region "Stack"
 
+    ''' <summary>
+    ''' Form/Class level Stack Object
+    ''' </summary>
     Private studentStack As New Stack(Of Student)
 
+    ''' <summary>
+    ''' btnAdd_Click - demonstrates adding student objects to a Stack
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnAddStack_Click(sender As Object, e As EventArgs) Handles btnAddStack.Click
 
+        Dim student As New Student()        ' create a new student object
 
-        Dim student As New Student()
+        student.Name = txtNameStack.Text    ' assign the name in the text box to the name property
 
-        student.Name = txtNameStack.Text
+        studentStack.Push(student)          ' add/push a student to the Stack object
 
-        studentStack.Push(student)
+        txtOutputStack.Clear()              ' clear the output text box
 
-        txtOutputStack.Clear()
+        For Each studentLoop As Student In studentStack ' loop the studentStack
 
-        For Each studentLoop As Student In studentStack
-
-            txtOutputStack.Text += studentLoop.GetStudentData() & vbCrLf
+            txtOutputStack.Text += studentLoop.GetStudentData() & vbCrLf    ' append the GetStudentData function data to the output text box
 
         Next studentLoop
 
-        txtNameStack.Clear()
-        txtNameStack.Focus()
+        txtNameStack.Clear()    ' clear the input text box
+        txtNameStack.Focus()    ' set focus to the input text box
 
     End Sub
 
+    ''' <summary>
+    ''' btnPop_Click - demonstrate the Pop function of the Stack
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnPop_Click(sender As Object, e As EventArgs) Handles btnPop.Click
 
-        Dim student As Student
+        Dim student As Student  ' declare a student object
 
-        txtOutputStack.Clear()
+        txtOutputStack.Clear()  ' clear the output text box
 
-        If studentStack.Count > 0 Then
+        If studentStack.Count > 0 Then   ' check if the Stack has any objects in it
 
-            student = studentStack.Pop()
+            student = studentStack.Pop()    ' set the student object and remove it from the top of the Stack
 
-            txtOutputStack.Text = "Pop-Look and Remove the next in line." & vbCrLf & student.GetStudentData()
+            txtOutputStack.Text = "Pop-Look and Remove the next in line." & vbCrLf & student.GetStudentData()   ' display the message to the user
 
         End If
 
     End Sub
 
+    ''' <summary>
+    ''' btnStackPeek_Click - demonstrate the Peek function of the Stack
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub btnStackPeek_Click(sender As Object, e As EventArgs) Handles btnStackPeek.Click
 
-        Dim student As Student
+        Dim student As Student  ' declare a student object
 
-        txtOutputStack.Clear()
+        txtOutputStack.Clear()  ' clear the output text box
 
-        If studentStack.Count > 0 Then
+        If studentStack.Count > 0 Then  ' check if the Stack has any objects in it
 
-            student = studentStack.Peek()
+            student = studentStack.Peek()   ' set the student object to the object on the top of the Stack
 
-            txtOutputStack.Text = "Peek-Look and do not Remove the next in line." & vbCrLf & student.GetStudentData()
+            txtOutputStack.Text = "Peek-Look and do not Remove the next in line." & vbCrLf & student.GetStudentData() ' display the message to the user
 
         End If
 
