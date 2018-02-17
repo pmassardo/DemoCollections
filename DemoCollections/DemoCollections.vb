@@ -3,6 +3,21 @@
 ''' Project:        DemoCollections
 ''' Date:           15-Feb-2018
 ''' Description:    Application to demonstrate the basec use of some Visual Basic collections.
+'''                 Colections are...
+'''                 
+'''                     -Similar to arrays in that they can hold one to many elements, 
+'''                      but a collection is dynamic so you do not need to specify the 
+'''                      size of a collection. You can just keep adding to it, when needed.
+'''                      
+'''                     -Typed Collections are similar to arrays in that once typed you 
+'''                      can only put a variable/object of that type into one of its elements.
+'''                      
+'''                     -Untyped Collections do not require you to specify the datatype of what
+'''                      will be stored in the elements of the collection. But, even when using an
+'''                      untyped collection it is not recommended to put variables/object of 
+'''                      different datatypes into an untyped Collection. But, never say never, 
+'''                      I've seen it done.
+'''                                         
 ''' </summary>
 
 Public Class frmDemoCollections
@@ -11,6 +26,7 @@ Public Class frmDemoCollections
 
     ''' <summary>
     ''' Form/Class level List Object
+    ''' Namespace - System.Collections.Generic
     ''' </summary>
     Private studentList As New List(Of Student)
 
@@ -80,6 +96,7 @@ Public Class frmDemoCollections
 
     ''' <summary>
     ''' Form/Class level ArrayList Object
+    ''' Namespace - System.Collections
     ''' </summary>
     Private studentArrayList As New ArrayList
 
@@ -149,6 +166,7 @@ Public Class frmDemoCollections
 
     ''' <summary>
     ''' Form/Class level SortedList Object
+    ''' Namespace - System.Collections.Generic
     ''' </summary>
     Private studentSortedListKey As New SortedList()
 
@@ -203,10 +221,13 @@ Public Class frmDemoCollections
 
 #End Region
 
-#Region "Collection"
+#Region "Collection (Not mentioned in the book)"
 
     ''' <summary>
     ''' Form/Class level Collection Object
+    '''     - If working with Visual Basic you may also come 
+    '''       across this type of collection object just called Collection
+    ''' Namespace - Microsoft.VisualBasic
     ''' </summary>
     Private studentCollection As New Collection
 
@@ -268,8 +289,8 @@ Public Class frmDemoCollections
     '''                         - the first person who lines up
     '''                         - is the first person to get service
     '''                         - is the first person to leave
+    ''' Namespace - System.Collections.Generic
     ''' </summary>
-
     Private studentQueue As New Queue(Of Student)
 
     ''' <summary>
@@ -348,6 +369,10 @@ Public Class frmDemoCollections
 
     ''' <summary>
     ''' Form/Class level Stack Object
+    '''     - Last In First Out
+    '''     - Push on top of the Stack.
+    '''     - Popped off the top of the Stack.
+    ''' Namespace - System.Collections.Generic
     ''' </summary>
     Private studentStack As New Stack(Of Student)
 
