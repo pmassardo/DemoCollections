@@ -3,7 +3,7 @@
 ''' Project:        DemoCollections
 ''' Date:           15-Feb-2018
 ''' Description:    Application to demonstrate the basec use of some Visual Basic collections.
-'''                 Colections are...
+'''                 Collections are...
 '''                 
 '''                     -Similar to arrays in that they can hold one to many elements, 
 '''                      but a collection is dynamic so you do not need to specify the 
